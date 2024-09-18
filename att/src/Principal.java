@@ -4,7 +4,7 @@ import produtos.ProdutoInfo;
 
 public class Principal {
     public static Scanner entrada = new Scanner(System.in);
-    public static ProdutoInfo produtoInfo = new ProdutoInfo();
+    public static ProdutoInfo produto = new ProdutoInfo();
 
     public static void main(String[] args) {
         menu();
@@ -21,12 +21,13 @@ public class Principal {
             String nome = entrada.nextLine();
             System.out.print("Valor do produto: ");
             double valor = entrada.nextDouble();
-            produtoInfo = new ProdutoInfo(tipo, nome, valor);
+            produto = new ProdutoInfo(tipo, nome, valor);
+            produto.infoProduto(produto);
             System.out.println("Insira 1 para continuar: ");
             c = entrada.nextInt();
         } while (c != 2);
         
-    produtoInfo.listarProdutos();
+    produto.listarProdutos();
 
     }
 }
