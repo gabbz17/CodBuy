@@ -1,7 +1,7 @@
 package produtos;
 
 
-public class ProdutoInfo {
+public abstract class ProdutoInfo {
     private String nome, tipo;
     private double valor;
 
@@ -21,11 +21,13 @@ public class ProdutoInfo {
         return nome;
     }
 
+    public double getValor(){
+        return valor;
+    }
+    
     @Override
     public String toString() {
             return "Tipo: " + tipo + "\nNome: " + nome  + "\n" + String.format("Valor: %.2f", valor);
     }
-    public double getValor(){
-        return valor;
-    }
+
 }

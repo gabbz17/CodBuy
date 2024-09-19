@@ -10,7 +10,6 @@ public class Cod {
 
 
     public static void menu(){
-        int x = 0;
         System.out.println("-----Bem vindo-----");
         System.out.println("Digite \n1.Para começar \n2.Para parar");
         int c = entrada.nextInt();
@@ -29,6 +28,7 @@ public class Cod {
             System.out.println("Insira 1 para continuar: ");
             c = entrada.nextInt();
         }
+        
     }
 
     public static void listagem(){
