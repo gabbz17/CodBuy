@@ -3,13 +3,13 @@ import java.util.ArrayList;
 import produtos.ProdutoInfo;
 import java.util.Scanner;
 
-public class Cod {
+public abstract class Cod {
     public static ArrayList<ProdutoInfo> info = new ArrayList<>();
     public static Scanner entrada = new Scanner(System.in);
-    public static ProdutoInfo produto = new ProdutoInfo();
+    //public static ProdutoInfo produto = new ProdutoInfo();
 
 
-    public static void menu(){
+    protected static void menu(){
         System.out.println("-----Bem vindo-----");
         System.out.println("Digite \n1.Para começar \n2.Para parar");
         int c = entrada.nextInt();
@@ -22,8 +22,7 @@ public class Cod {
             String nome = entrada.nextLine();
             System.out.print("Valor do produto: ");
             double valor = entrada.nextDouble();
-            produto = new ProdutoInfo(tipo, nome, valor);
-            info.add(produto);
+            info.add(new ProdutoInfo(tipo, nome, valor));
             System.out.println(" ");
             System.out.println("Insira 1 para continuar: ");
             c = entrada.nextInt();
@@ -31,7 +30,7 @@ public class Cod {
         
     }
 
-    public static void listagem(){
+    protected static void listagem(){
         int x = 0;
         for (ProdutoInfo produtoInfo : info) {
             System.out.println("id: " + x++  + "\n" +produtoInfo);
