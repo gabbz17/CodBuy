@@ -1,6 +1,6 @@
 ## Objetivo do código
 
-Esse programa tem a funcionalidade de cadastrar dados de um usuário, onde ele poderá visualizar esses dados, alterar as informações e listar todas as modificações que foram realizadas. Além de que ele poderá cadastrar itens para "comprar".
+Esse programa tem a funcionalidade de cadastrar dados de um usuário, onde ele poderá visualizar esses dados, alterar as informações e listar todas as modificações que foram realizadas. Além de que poderá cadastrar itens para "comprar" em uma ação seguinte.
 
 ## Ambientes utilizados
 
