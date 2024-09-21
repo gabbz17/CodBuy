@@ -1,40 +1,51 @@
 package codigo;
+
 import java.util.ArrayList;
+import entities.UserData;
 import produtos.ProdutoInfo;
-import java.util.Scanner;
 
-public abstract class Cod {
-    public static ArrayList<ProdutoInfo> info = new ArrayList<>();
-    public static Scanner entrada = new Scanner(System.in);
-    //public static ProdutoInfo produto = new ProdutoInfo();
+public class Cod {
+    ProdutoInfo pd = new ProdutoInfo();
+    public ArrayList<ProdutoInfo> info = new ArrayList<>();
+    public ArrayList<UserData> data = new ArrayList<>();
 
 
-    protected static void menu(){
-        System.out.println("-----Bem vindo-----");
-        System.out.println("Digite \n1.Para começar \n2.Para parar");
-        int c = entrada.nextInt();
-        while (c != 2) {
-            System.out.println("-------------------");
-            System.out.print("Informe a categoria do produto: ");
-            entrada.nextLine();
-            String tipo = entrada.nextLine();
-            System.out.print("Nome do produto: ");
-            String nome = entrada.nextLine();
-            System.out.print("Valor do produto: ");
-            double valor = entrada.nextDouble();
-            info.add(new ProdutoInfo(tipo, nome, valor));
-            System.out.println(" ");
-            System.out.println("Insira 1 para continuar: ");
-            c = entrada.nextInt();
-        }
-        
+
+    public void addInfo(ProdutoInfo produto){
+        info.add(produto);
     }
 
-    protected static void listagem(){
-        int x = 0;
+    public void listarProdutos(){
+        int c = 0;
         for (ProdutoInfo produtoInfo : info) {
-            System.out.println("id: " + x++  + "\n" +produtoInfo);
-            System.out.println("-------------------");
+            System.out.println("id: " + c++ + "\n" + produtoInfo + "\n");
         }
+    }
+
+    public void pegarProduto(int n){
+        System.out.println(info.get(n));
+    }
+
+    public void addUser(UserData user){
+        data.add(user);
+    }
+
+    public void alteracoesData(){
+        System.out.println("Ultimas atualizações: ");
+        for (UserData userData : data) {
+            System.out.println(userData + "\n");
+        }
+    }    
+
+    public int frete(String cep){
+
+        if (cep.equals("41219600")) {
+            System.out.println("Valor do frete: R$" + 15);
+            return 15;
+        } else if (cep.equals("48280000")) {
+            System.out.println("Valor do frete: R$" + 20);
+            return 20;
+        }
+        return 0;
     }
 }
