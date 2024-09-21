@@ -1,8 +1,8 @@
-## Getting Started
+## Objetivo do código
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+Esse programa tem a funcionalidade de cadastrar dados de um usuário, onde ele poderá visualizar esses dados, alterar as informações e listar todas as modificações que foram realizadas. Além de que ele poderá cadastrar itens para "comprar".
 
-## Folder Structure
+## Itens utilizados
 
 The workspace contains two folders by default, where:
 
