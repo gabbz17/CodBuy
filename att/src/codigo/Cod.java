@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import entities.UserData;
 import produtos.ProdutoInfo;
 
-public class Cod {
+public final class Cod {
     ProdutoInfo pd = new ProdutoInfo();
     public ArrayList<ProdutoInfo> info = new ArrayList<>();
     public ArrayList<UserData> data = new ArrayList<>();

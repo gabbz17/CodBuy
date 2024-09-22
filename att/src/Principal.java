@@ -21,10 +21,13 @@ public class Principal {
         System.out.println("-----Bem vindo-----");
         System.out.println("Vamos inciar seu cadastro em nossa loja!");
         
-        if (caso() == true) {
+        if (caso()) {
             menu();
-        } else if (caso() == false) {
-            caso();
+        } else {
+            while (!caso()) {
+                caso();
+            }
+            menu();
         } 
     }
 
@@ -76,30 +79,15 @@ public class Principal {
     private static void modificar() {
         System.out.println(" ");
         System.out.println("--------------------");
-        try{
-            System.out.print("Nome e sobrenome: ");
-            String nome = entrada.nextLine();
-            System.out.print("Data de nascimento (dd/mm/aaaa): ");
-            LocalDate ano = LocalDate.parse(entrada.nextLine(), DateTimeFormatter.ofPattern("dd/MM/yyyy"));
-            System.out.print("Email: ");
-            String email = entrada.nextLine();
-            System.out.print("Número para contato: ");
-            String numero = entrada.nextLine();
-    
-            if (nome.equals(" ") || email.equals(" ") || numero.equals(" ")) {
-                System.out.println("Preencha os campos corretamente!");
-                System.out.println("--------------------");
-                modificar();
-            } else {
-                cod.addUser(new UserData(nome, numero, email, ano));
-                sair();
-            }
 
-        } catch(java.time.format.DateTimeParseException e) {
-            System.out.println("Preencha os campos corretamente!");
-            System.out.println("--------------------");
-            modificar();
-        }
+        if (caso()) {
+            sair();
+        } else {
+            while (!caso()) {
+                caso();
+            }
+            sair();
+        } 
     }
 
     private static void historico() {
@@ -162,6 +150,9 @@ public class Principal {
 
 
 
+    
+
+
     public static void sair(){
         System.out.println(" ");
         System.out.println("---------------------");
@@ -180,6 +171,7 @@ public class Principal {
     private static boolean caso(){
         
         try{
+            entrada.nextLine();
             System.out.print("Nome e sobrenome: ");
             String nome = entrada.nextLine();
             System.out.print("Email: ");
@@ -189,7 +181,7 @@ public class Principal {
             System.out.print("Data de nascimento (dd/mm/aaaa): ");
             LocalDate ano = LocalDate.parse(entrada.nextLine(), DateTimeFormatter.ofPattern("dd/MM/yyyy"));
     
-            if (nome.equals(" ") || email.equals(" ") || numero.equals(" ")) {
+            if (nome.equals("") || email.equals("") || numero.equals("")) {
                 System.out.println("Preencha os campos corretamente!");
                 System.out.println("--------------------");
                 return false;
