@@ -1,7 +1,4 @@
 import produtos.ProdutoInfo;
-
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 import codigo.Cod;
 import entities.UserData;
@@ -21,11 +18,11 @@ public class Principal {
         System.out.println("-----Bem vindo-----");
         System.out.println("Vamos inciar seu cadastro em nossa loja!");
         
-        if (caso()) {
+        if (cod.caso()) {
             menu();
         } else {
-            while (!caso()) {
-                caso();
+            while (!cod.caso()) {
+                cod.caso();
             }
             menu();
         } 
@@ -80,11 +77,11 @@ public class Principal {
         System.out.println(" ");
         System.out.println("--------------------");
 
-        if (caso()) {
+        if (cod.caso()) {
             sair();
         } else {
-            while (!caso()) {
-                caso();
+            while (!cod.caso()) {
+                cod.caso();
             }
             sair();
         } 
@@ -100,10 +97,7 @@ public class Principal {
 
     private static void informacoes() {
         System.out.println("--------------------");
-        System.out.println("Nome: " + user.getNome());
-        System.out.println("Data de nascimento: " + user.getAnoNasc());
-        System.out.println("Número de telefone: " + user.getNumero());
-        System.out.println("E-mail: " + user.getEmail());
+        System.out.println(user.toString());
         perfil();
     }
 
@@ -168,33 +162,4 @@ public class Principal {
         }
     }
 
-    private static boolean caso(){
-        
-        try{
-            entrada.nextLine();
-            System.out.print("Nome e sobrenome: ");
-            String nome = entrada.nextLine();
-            System.out.print("Email: ");
-            String email = entrada.nextLine();
-            System.out.print("Número para contato: ");
-            String numero = entrada.nextLine();
-            System.out.print("Data de nascimento (dd/mm/aaaa): ");
-            LocalDate ano = LocalDate.parse(entrada.nextLine(), DateTimeFormatter.ofPattern("dd/MM/yyyy"));
-    
-            if (nome.equals("") || email.equals("") || numero.equals("")) {
-                System.out.println("Preencha os campos corretamente!");
-                System.out.println("--------------------");
-                return false;
-            } else {
-                cod.addUser(new UserData(nome, numero, email, ano));
-                return true;
-            }
-
-        } catch(java.time.format.DateTimeParseException e) {
-            System.out.println("Preencha os campos corretamente!");
-            System.out.println("--------------------");
-            return false;
-        }
-
-    }
 }
