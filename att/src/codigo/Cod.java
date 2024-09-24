@@ -87,10 +87,6 @@ public final class Cod {
     }
 
     public void mostrarDados(){
-        
-        System.out.println("Nome: " + user.getNome());
-        System.out.println("Data de nascimento: " + user.getAnoNasc());
-        System.out.println("Número de telefone: " + user.getNumero());
-        System.out.println("E-mail: " + user.getEmail());
+        System.out.println(data.getLast());
     }
 }

@@ -91,13 +91,14 @@ public class Principal {
         System.out.println(" ");
         System.out.println("--------------------");
         cod.alteracoesData();
+        perfil();
     }
 
 
 
     private static void informacoes() {
         System.out.println("--------------------");
-        System.out.println(user.toString());
+        cod.mostrarDados();
         perfil();
     }
 
@@ -134,7 +135,7 @@ public class Principal {
         System.out.println("---------------------");
         cod.listarProdutos();
         System.out.println("---------------------");
-        System.out.print("Indique qual produto deseja comprar: ");
+        System.out.print("Indique o id do produto deseja comprar: ");
         cod.pegarProduto(entrada.nextInt());
         System.out.println("---------------------");
         System.out.print("Informe seu cep para calcular o frete: ");
